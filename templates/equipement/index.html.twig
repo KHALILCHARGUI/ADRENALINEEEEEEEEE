@@ -1,0 +1,37 @@
+
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <h1>Equipement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_eq</th>
+                <th>Desc_eq</th>
+                <th>Prix_eq</th>
+                <th>Quantite_eq</th>
+               
+                <th>Imprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for equipement in equipements %}
+            <tr>
+                <td>{{ equipement.id }}</td>
+                <td>{{ equipement.nomEq }}</td>
+                <td>{{ equipement.descEq }}</td>
+                <td>{{ equipement.prixEq }}</td>
+                <td>{{ equipement.quantiteEq }}</td>
+                
+                <td><a href="{{ path('Equipement_list') }}">Imprimer</a></td>
+            </tr>
+        {% else %}
+            
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

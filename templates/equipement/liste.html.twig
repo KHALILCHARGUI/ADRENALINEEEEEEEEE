@@ -1,0 +1,83 @@
+
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('unika-front/css/pdf.css') }}">
+    <h1> Liste des Equipement </h1>
+{#}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_eq</th>
+                <th>Desc_eq</th>
+                <th>Prix_eq</th>
+                <th>Quantite_eq</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        {% for equipement in equipements %}
+            <tr>
+                <td>{{ equipement.id }}</td>
+                <td>{{ equipement.nomEq }}</td>
+                <td>{{ equipement.descEq }}</td>
+                <td>{{ equipement.prixEq }}</td>
+                <td>{{ equipement.quantiteEq }}</td>
+               
+                
+            </tr>
+        {% else %}
+            
+        {% endfor %}
+        </tbody>
+    </table>
+        
+        #}
+
+
+                <div class="row">
+                    <table class="table3 table-condensed table-bordered">
+                    <thead>
+                        <tr class="head">
+                       
+                        </tr>
+                        <tr>
+                        <th class="col1">Id</th>
+                        <th class="col2">Nom_eq</th>
+                        <th class="col3">Desc_eq</th>
+                        <th class="col4">Prix_eq</th>
+                        <th class="col5">Quantite_eq</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for equipement in equipements %}
+                        <tr>
+
+                        <td>{{ equipement.id }}</td>
+                        <td>{{ equipement.nomEq }}</td>
+                        <td>{{ equipement.descEq }}</td>
+                        <td>{{ equipement.prixEq }}</td>
+                        <td>{{ equipement.quantiteEq }}</td>
+               
+                      
+                        </tr>
+                        {% else %}
+                        <tr>
+                        <td colspan="7"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

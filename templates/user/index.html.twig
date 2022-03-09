@@ -1,0 +1,71 @@
+{% extends 'baseBack.html.twig' %}
+
+
+{% block body %}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">ADMIN INTERFACE </h3>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">USERS</h4>
+                            <p class="card-description">only someone with administrative priviliges has access to this page</code>
+                            </p>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Phone number</th>
+                                        <th>Roles</th>
+                                        <th>Password</th>
+                                        <th>full name</th>
+                                        <th>actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for user in users %}
+                                        <tr>
+                                            <td>{{ user.usertag }}</td>
+                                            <td>{{ user.username }}</td>
+                                            <td>{{ user.phonenumber }}</td>
+
+                                            <td>
+                                                {% for role in user.roles %}
+                                                    {% if role == 'ROLE_ADMIN' %}
+                                                        <label class="badge badge-success">ADMIN</label>
+                                                    {% elseif role == 'ROLE_PLAYER'%}
+                                                        <label class="badge badge-info">PLAYER</label>
+                                                    {% elseif role == 'ROLE_USER' %}
+                                                        <label class="badge badge-warning">USER</label>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </td>
+
+                                            <td>Crypted</td>
+                                            <td>{{ user.firstname ~ " " ~ user.lastname}}</td>
+
+                                            <td>
+                                                <a class="btn btn-outline-primary btn-fw" href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                                                <a class="btn btn-outline-primary btn-fw" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                                            </td>
+                                        </tr>
+
+
+
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
