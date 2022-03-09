@@ -1,0 +1,144 @@
+
+  .header {
+    text-align: center;
+    position: absolute;
+    left: 0pt;
+    top: 20pt;
+    width: 553pt;
+  }
+  .header h1 {
+    margin: 0pt;
+    font-size: 12pt;
+  }
+  .header h2 {
+    text-decoration: underline;
+    text-transform: uppercase;
+    background-color: #FFFF99;
+    margin: 10pt 0pt 0pt 0pt;
+  }
+  .nip1 td {
+    width: 20%;
+  }
+  .result {
+    color: blue;
+  }
+  .nip-width1 {
+    width: 170pt;
+  }
+  .nip-width2 {
+    width: 130pt;
+  }
+ 
+  .nip-width3 {
+    width: 155pt;
+  }
+  .nip-width4 {
+    width: 145pt;
+  }
+  h2 {
+    text-align: center;
+    font-size: 14pt;
+    margin: 10pt 0pt 0pt 0pt;
+  }
+ 
+  table.border, div.border table {
+  margin-top: 0pt;
+  border-collapse: collapse;
+  }
+  div.border table {
+  margin-top: 0px;
+  }
+  .border {
+  border: 2px solid black;
+  }
+  .th25 {
+  width: 25%;
+  }
+  .head-tab {
+  background-color: #FFFF99;
+  }
+  .unstyled {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  }
+  .unstyled li {
+  margin: 0px;
+  background-color: blue;
+  }
+ 
+  .content {
+  position: absolute;
+  top: 60pt;
+  left: 00pt;
+  }
+  .row .span6 {
+  width: 250pt;
+  margin: 100pt;
+  }
+  table tr {
+  width: 100%;
+  }
+  .table-bordered, .table-bordered td, .table-bordered th {
+  border-collapse: collapse;
+  border: 1px solid black;
+  }
+  .table1 td{
+  width: 170pt;
+  }
+  .table2 {
+  position: absolute;
+  top: 0pt;
+  left: 310pt;
+  }
+  .table2 td {
+  width: 210pt;
+  }
+  td, th {
+  padding: 3pt;
+  }
+ 
+  .table3 {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 8pt;
+            }
+  .table3 tr {
+    width: 100%;
+ }
+  .table3 th, .table4 thead th {
+  text-align: center;
+  }
+  .table3 .head {
+  background-color: #EEEEEE;
+  }
+ 
+  .col1 {
+  width: 10pt;
+  }
+  .col2 {
+  width: 60pt;
+  }
+  .col3 {
+  width: 60pt;
+  }
+  .col4 {
+  width: 100pt;
+   }
+  .col5 {
+    width: 120pt;
+  }
+  .col6 {
+    width: 90pt;
+  }
+  .col7 {
+    width: 10pt;
+  }
+ 
+  table {
+  margin-top: 20pt;
+  }
+ 
+  .table4  {
+  width: 650pt;
+   }
