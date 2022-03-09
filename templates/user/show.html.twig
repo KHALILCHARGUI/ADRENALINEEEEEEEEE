@@ -1,0 +1,84 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <div  class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Profile </h3>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-right">
+                                <div class="col-7">
+                                    <h4 class="card-title">User Information</h4>
+                                </div>
+                                <div class="col-4 text-right" style="display: -webkit-box;">
+                                    <a  style="margin-left: -23px;" class="btn btn-outline-primary btn-fw" href="{{ path('user_index') }}">Back</a>
+                                    <form style=" margin-left: 15px;" method="post" action="{{ path('user_delete', {'id': user.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                        <button class="btn btn-outline-danger btn-fw">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <form class="forms-sample" readonly="true">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Username</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" value="{{ user.usertag }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Full name </label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" value="{{ user.firstname ~ " " ~user.lastname }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" value="{{ user.email }}" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">phone number</label>
+                                    <input  class="form-control" id="exampleInputEmail1" value="{{ user.phonenumber }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">last login date</label>
+                                    <input  class="form-control" id="exampleInputPassword1"  value="{{ user.lastlogindate|date("m/d/Y") }}" >
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Roles</label>
+                                        {% for role in user.roles %}
+                                            {% if role == "ROLE_ADMIN" %}
+                                                <div class="col-sm-2">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked> ADMIN </label>
+                                                    </div>
+                                                </div>
+                                            {% else %}
+                                                <div class="col-sm-2">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input" name="membershipRadios" id="membershipRadios3" value="option3" checked> USER </label>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+
+
+                                    </div>
+                                </div>
+                                <a class="btn btn-outline-primary btn-fw" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

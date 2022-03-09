@@ -1,0 +1,34 @@
+
+
+{% block body %}
+    <h1>Evenement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_ev</th>
+                <th>Date_ev</th>
+                <th>Heured_ev</th>
+                <th>Heuref_ev</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for evenement in evenements %}
+            <tr>
+                <td>{{ evenement.id }}</td>
+                <td>{{ evenement.nomEv }}</td>
+                <td>{{ evenement.dateEv ? evenement.dateEv|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.heuredEv ? evenement.heuredEv|date('H:i:s') : '' }}</td>
+                <td>{{ evenement.heurefEv ? evenement.heurefEv|date('H:i:s') : '' }}</td>
+                
+            </tr>
+        {% else %}
+            
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
